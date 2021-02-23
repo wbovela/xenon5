@@ -5,9 +5,9 @@ function audio.init()
     audio.gunSound = love.audio.newSource("Audio/LazerBlast.wav", "static")
     audio.explosionSound = love.audio.newSource("Audio/Eplosion.wav", "static")
 
-    music:setVolume(0.3)
-    music:setLooping(true)
-    music:play()     
+    audio.music:setVolume(0.3)
+    audio.music:setLooping(true)
+    audio.music:play()
 end
 
 return audio

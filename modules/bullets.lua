@@ -1,9 +1,12 @@
 local bullets = {}
 
+local bulletImg = nil
+
+local bulletCollision = false
+local bulletImg = love.graphics.newImage('Sprites/Bolt.png')
+
 function bullets.init()
-    bullets.bulletImg = nil
-    bullets.bullets = {} -- array of current bullets being drawn and updated
-    bullets.bulletCollision = false
+    bullets.bulletTable = {} -- array of current bullets being drawn and updated
 end
 
 return bullets
