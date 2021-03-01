@@ -8,6 +8,8 @@ local audio         = require("modules.audio")
 local ui            = require("modules.ui")
 local pickups       = require("modules.pickups")
 
+local gamestate     = require("hump.gamestate")
+
 function love.load(arg)
     love.window.setTitle("Xenon 5.0 -- a remake")
     love.graphics.setDefaultFilter('nearest', 'nearest')

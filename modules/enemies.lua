@@ -157,7 +157,8 @@ function enemies.move(dt, bulletTable, player)
         -- check each enemy for collision with a bullet
         for bulletIndex, bullet in ipairs(bulletTable) do
    		    if utils.CheckCollision(enemy.x, enemy.y, enemy.img:getWidth(), enemy.img:getHeight(),
-                bullet.x, bullet.y, bullet.img:getWidth(), bullet.img:getHeight()) then
+                bullet.x, bullet.y, bullet.img:getWidth(), bullet.img:getHeight())
+                then
    	                table.remove(bullets, bulletIndex)
    	                player.score = player.score + enemy.score
                     audio.explosionSound:play()
@@ -165,8 +166,10 @@ function enemies.move(dt, bulletTable, player)
             end
         end -- bullet loop
 
+        -- check for enemy collision with player
         if utils.CheckCollision(enemy.x, enemy.y, enemy.img:getWidth(), enemy.img:getHeight(),
-            player.x, player.y, player.img:getWidth(), player.img:getHeight()) and player.isAlive then
+            player.x, player.y, player.img:getWidth(), player.img:getHeight())
+            and (player.isAlive) then
         		table.remove(enemies, i)
         		player.isAlive = false
                 audio.explosionSound:play()
